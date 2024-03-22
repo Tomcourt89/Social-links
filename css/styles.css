@@ -33,11 +33,13 @@ body {
 }
 
 article {
-    margin: auto;
     background: var(--dark-grey);
-    padding: 24px;
     margin: 0 24px;
     border-radius: 12px;
+}
+
+section {
+    margin: 24px;
 }
 
 .identity {
@@ -65,6 +67,7 @@ article {
 .identity h2 {
     font-size: 1.5rem;
     font-weight: 600;
+    line-height: var(--lheight);
 }
 
 .identity > div p {
@@ -84,6 +87,19 @@ section ul li {
     border-radius: 8px;
 }
 
+section ul li:active {
+    background: var(--green);
+}
+
+section ul li:active a {
+    color: var(--grey);
+}
+
+section ul li,
+section ul li a {
+    transition: ease 0.5s;
+}
+
 section ul li a {
     display: flex;
     align-self: center;
@@ -92,4 +108,24 @@ section ul li a {
     padding-block: 12px;
     color: var(--white);
     font-weight: 700;
+}
+
+@media (width >= 40em) {
+    section {
+        margin: 40px;
+    }
+
+    section ul li {
+        min-width: 304px;
+    }
+}
+
+@media (hover: hover) {
+    section ul li:hover {
+        background: var(--green);
+    }
+
+    section ul li:hover a {
+        color: var(--grey);
+    }
 }
